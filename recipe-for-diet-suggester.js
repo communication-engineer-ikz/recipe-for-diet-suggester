@@ -1,4 +1,4 @@
-function sendRecipe() {
+function recipeForDietSuggester() {
     const ACCESS_TOKEN = getAccessToken();
     const line_endpoint = 'https://api.line.me/v2/bot/message/reply';
     const replyContent = "沼";
