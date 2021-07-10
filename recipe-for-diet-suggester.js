@@ -1,28 +1,37 @@
 function recipeForDietSuggester() {
     const ACCESS_TOKEN = getAccessToken();
+    const USER_ID = getUserId();
     const line_endpoint = "https://api.line.me/v2/bot/message/reply";
-    const replyContent = "沼";
+    const message = "沼";
    
-    if(replyContent == "") {
+    const headers = {
+        "Content-Type": "application/json; charset=UTF-8",
+        "Authorization": "Bearer " + ACCESS_TOKEN,
+    };
 
-        return;
-    } else {
+    const postData = {
+        "to" : USER_ID,
+        "messages" : [
+        {
+            "type": "text",
+            "text": message
+        }
+        ]
+    };
 
-        UrlFetchApp.fetch(line_endpoint, {
-            "headers": {
-                "Content-Type": "application/json; charset=UTF-8",
-                "Authorization": "Bearer " + ACCESS_TOKEN,
-            },
-            "method": "post",
-            "payload": JSON.stringify({
-                "replyToken": reply_token,
-                "messages": [{
-                    "type": "text",
-                    "text": replyContent,
-                }],
-            }),
-        });
+    var options = {
+        "method" : "post",
+        "headers" : headers,
+        "muteHttpExceptions" : true,
+        "payload" : JSON.stringify(postData)
+    };
 
-        return ContentService.createTextOutput(JSON.stringify({"content": "post ok"})).setMimeType(ContentService.MimeType.JSON);
-    }
+    //https://qiita.com/kunihiros/items/255070ba950a7ba95ae4
+    try {
+        const res = UrlFetchApp.fetch(line_endpoint, options);
+        Logger.log(res);
+    } catch(e) {
+        Logger.log("Error:");
+        Logger.log(e);
+  }
 }
