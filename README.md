@@ -11,6 +11,7 @@
 ## LINE Bot
 https://developers.line.biz/console/channel/1655754416
 
+### 友達登録はこちらから
 <img src="./img/857tqvob.png" width=10%>
 
 ### 備考
