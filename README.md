@@ -5,6 +5,9 @@
 ## レシピ一覧
 [Recipe for Diet Suggester](<https://docs.google.com/spreadsheets/d/11X49AgLpuJgjj7Y0skaaYTlsn_dNny73rBMC2lu2mjU/edit#gid=0>)
 
+### トリガー
+- GAS のトリガーで毎日19-20時に実行
+
 ## LINE Bot
 https://developers.line.biz/console/channel/1655754416
 
