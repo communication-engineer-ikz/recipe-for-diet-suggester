@@ -1,9 +1,14 @@
 # Recipe for Diet Suggester
 ## 概要
-ゆるく減量するためのレシピを毎日提案してくれる
+ゆるく減量するためのレシピを毎日提案してくれるLINE Bot。
 
 ## レシピ一覧
 [Recipe for Diet Suggester](<https://docs.google.com/spreadsheets/d/11X49AgLpuJgjj7Y0skaaYTlsn_dNny73rBMC2lu2mjU/edit#gid=0>)
+
+## LINE Bot
+https://developers.line.biz/console/channel/1655754416
+
+<img src="./img/857tqvob.png" width=10%>
 
 ## 参考
 1. [GASとLINE Messaging APIでpushメッセージのLINEbotを作る！](<https://qiita.com/n_oshiumi/items/a1a02e03093825f41e01>)
