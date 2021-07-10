@@ -4,7 +4,6 @@
 function recipeForDietSuggester() {
     const ACCESS_TOKEN = getAccessToken();
     const USER_ID = getUserId();
-    const line_endpoint = "https://api.line.me/v2/bot/message/reply";
     const url = "https://api.line.me/v2/bot/message/push";
 
     const message = "沼";
