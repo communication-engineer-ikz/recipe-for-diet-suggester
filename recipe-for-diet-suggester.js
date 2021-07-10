@@ -37,7 +37,7 @@ function getRandomInt(min, max) {
 function postToLINE(message) {
     const ACCESS_TOKEN = getAccessToken();
     const USER_ID = getUserId();
-    const url = "https://api.line.me/v2/bot/message/push";
+    const line_endpoint = "https://api.line.me/v2/bot/message/push";
    
     const headers = {
         "Content-Type": "application/json; charset=UTF-8",
@@ -47,10 +47,10 @@ function postToLINE(message) {
     const postData = {
         "to" : USER_ID,
         "messages" : [
-        {
-            "type": "text",
-            "text": message
-        }
+            {
+                "type": "text",
+                "text": message
+            }
         ]
     };
 
@@ -63,7 +63,7 @@ function postToLINE(message) {
 
     //https://qiita.com/kunihiros/items/255070ba950a7ba95ae4
     try {
-        const res = UrlFetchApp.fetch(url, options);
+        const res = UrlFetchApp.fetch(line_endpoint, options);
         Logger.log(res);
     } catch(e) {
         Logger.log("Error:");
