@@ -39,3 +39,22 @@ function recipeForDietSuggester() {
         Logger.log(e);
   }
 }
+
+function getRecipeForDiet() {
+    const spreadSheet = SpreadsheetApp.openById("11X49AgLpuJgjj7Y0skaaYTlsn_dNny73rBMC2lu2mjU");
+    const sheet = spreadSheet.getSheetByName("Recipe for Diet");
+    const lastRow = sheet.getLastRow();
+    const recipeList = sheet.getRange(2, 1, lastRow, 3).getValues();
+    const recipe = recipeList[getRandomInt(0, lastRow - 2)];
+
+    return recipe;
+}
+
+/* 参考
+    * https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+*/
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+  }
