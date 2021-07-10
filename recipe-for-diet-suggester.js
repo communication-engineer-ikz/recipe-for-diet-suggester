@@ -2,6 +2,17 @@
     * https://qiita.com/n_oshiumi/items/a1a02e03093825f41e01
 */
 function recipeForDietSuggester() {
+    const recipe = getRecipeForDiet();
+    const recipeName = recipe[0];
+    const recipeDescription = recipe[1];
+    const recipeUrl = recipe[2];
+
+    //https://qiita.com/naoki110529/items/66b010de0e6db8211b0f
+    const message = recipeName + "\n\n"
+        + recipeDescription + "\n\n"
+        + recipeUrl;
+
+    postToLINE(message);
 }
 
 function getRecipeForDiet() {
@@ -23,12 +34,10 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
   }
 
-function postToLINE() {
+function postToLINE(message) {
     const ACCESS_TOKEN = getAccessToken();
     const USER_ID = getUserId();
     const url = "https://api.line.me/v2/bot/message/push";
-
-    const message = "沼";
    
     const headers = {
         "Content-Type": "application/json; charset=UTF-8",
