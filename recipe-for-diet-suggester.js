@@ -35,8 +35,8 @@ function getRandomInt(min, max) {
   }
 
 function postToLINE(message) {
-    const ACCESS_TOKEN = getAccessToken();
-    const USER_ID = getUserId();
+    const ACCESS_TOKEN = getRecipeForDietSuggesterAccessToken();
+    const USER_ID = getRecipeForDietSuggesterUserId();
     const line_endpoint = "https://api.line.me/v2/bot/message/push";
    
     const headers = {
