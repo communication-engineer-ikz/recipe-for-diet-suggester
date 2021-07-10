@@ -5,6 +5,8 @@ function recipeForDietSuggester() {
     const ACCESS_TOKEN = getAccessToken();
     const USER_ID = getUserId();
     const line_endpoint = "https://api.line.me/v2/bot/message/reply";
+    const url = "https://api.line.me/v2/bot/message/push";
+
     const message = "沼";
    
     const headers = {
@@ -31,7 +33,7 @@ function recipeForDietSuggester() {
 
     //https://qiita.com/kunihiros/items/255070ba950a7ba95ae4
     try {
-        const res = UrlFetchApp.fetch(line_endpoint, options);
+        const res = UrlFetchApp.fetch(url, options);
         Logger.log(res);
     } catch(e) {
         Logger.log("Error:");
