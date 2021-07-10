@@ -1,3 +1,6 @@
+/* 参考
+    * https://qiita.com/n_oshiumi/items/a1a02e03093825f41e01
+*/
 function recipeForDietSuggester() {
     const ACCESS_TOKEN = getAccessToken();
     const USER_ID = getUserId();
